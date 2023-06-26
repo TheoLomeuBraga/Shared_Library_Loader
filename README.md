@@ -12,6 +12,7 @@ A C++ class for dynamically loading shared libraries (.dll or .so) on Windows us
 
    ```cpp
    #include <shared_library_loader.h>
+   ```
 
 2. Create an instance of the Shared_Library_Loader class by providing the name of the library as a constructor argument:
 
@@ -23,7 +24,8 @@ A C++ class for dynamically loading shared libraries (.dll or .so) on Windows us
 
 3. Call the call_function method to invoke a function from the loaded library:
    ```cpp
-    void* result = loader.call_function("function_name", arg);
+   void* result = loader.call_function("function_name", arg);
+   ```
 
    Replace "function_name" with the name of the function you want to call.
    arg is a pointer to the argument you want to pass to the function.
@@ -37,3 +39,4 @@ A C++ class for dynamically loading shared libraries (.dll or .so) on Windows us
 
     #for unix
     g++ -DUNIX -o example example.cpp
+    ```
