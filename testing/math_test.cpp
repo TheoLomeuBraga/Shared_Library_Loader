@@ -11,7 +11,7 @@ int main() {
     std::cout << *result << std::endl;
     delete result;
 
-    math_function sllf = reinterpret_cast<math_function>(sll.call_function("get_do_math",NULL));
-    std::cout << sllf(20,80) << std::endl;
+    math_function do_math = reinterpret_cast<math_function>(sll.call_function("get_do_math",NULL));
+    std::cout << do_math(20,80) << std::endl;
     return 0;
 }
