@@ -1,5 +1,5 @@
 #include <string>
-#include <iostream>
+
 typedef void* (*MyFunctionType)(void*);
 
 #ifdef WINDOWS
