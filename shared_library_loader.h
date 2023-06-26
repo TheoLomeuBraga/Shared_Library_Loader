@@ -1,6 +1,6 @@
 #include <string>
 
-typedef void* (*MyFunctionType)(void*);
+typedef void* (*Shared_Library_Loader_Function)(void*);
 
 #ifdef WINDOWS
 #include <windows.h>
@@ -14,7 +14,7 @@ public:
     }
     void *call_function(std::string function_name, void *arg)
     {
-        MyFunctionType MyFunction = reinterpret_cast<MyFunctionType>(GetProcAddress(hDLL, function_name.c_str()));
+        Shared_Library_Loader_Function MyFunction = reinterpret_cast<Shared_Library_Loader_Function>(GetProcAddress(hDLL, function_name.c_str()));
 
 
         if (MyFunction != nullptr)
@@ -42,7 +42,7 @@ public:
     }
     void *call_function(std::string function_name, void *arg)
     {
-        MyFunctionType MyFunction = reinterpret_cast<MyFunctionType>(dlsym(handle, function_name.c_str()));
+        Shared_Library_Loader_Function MyFunction = reinterpret_cast<Shared_Library_Loader_Function>(dlsym(handle, function_name.c_str()));
 
         if (MyFunction != nullptr)
         {
