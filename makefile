@@ -14,4 +14,4 @@ unix:
 	g++ -DUNIX -o math_test testing/math_test.cpp
 
 clean:
-	rm test_lib test_lib.so test_lib.dll test_lib.exe test_lib.dll test_lib.exe math_test math_test.exe math_lib.so math_lib.dll
+	rm -h test_lib test_lib.so test_lib.dll test_lib.exe test_lib.dll test_lib.exe math_test math_test.exe math_lib.so math_lib.dll
