@@ -32,7 +32,7 @@ Note: The call_function method returns a void* pointer, so you may need to cast 
 4. set your OS type windows or unix like in build command:
     ```g++
     #for windows
-    g++ -DWINDOWS -o test_lib.exe testing/test.cpp
+    g++ -DWINDOWS -o example.exe example.cpp
 
     #for unix
-    g++ -DUNIX -o test_lib testing/test.cpp
+    g++ -DUNIX -o example example.cpp
