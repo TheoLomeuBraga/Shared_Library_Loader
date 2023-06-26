@@ -40,3 +40,14 @@ A C++ class for dynamically loading shared libraries (.dll or .so) on Windows us
     #for unix
     g++ -DUNIX -o example example.cpp
     ```
+
+   example:
+   ```cpp
+   #include "../shared_library_loader.h"
+
+   int main() {
+       Shared_Library_Loader sll("test_lib");
+       sll.call_function("hello",NULL);
+       return 0;
+   }
+   ```
