@@ -10,7 +10,7 @@ public:
     HMODULE hDLL;
     Shared_Library_Loader(std::string lib_name)
     {
-        hDLL = LoadLibrary((lib_name + std::string(".dll")).c_str())
+        hDLL = LoadLibrary((lib_name + std::string(".dll")).c_str());
     }
     void *call_function(std::string function_name, void *arg)
     {
