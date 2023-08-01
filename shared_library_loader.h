@@ -3,6 +3,7 @@
 typedef void* (*MyFunctionType)(void*);
 
 #ifdef WINDOWS
+#define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 class Shared_Library_Loader
 {
