@@ -1,6 +1,6 @@
 #include <string>
-#include <iostream>
-typedef void* (*MyFunctionType)(void*);
+
+typedef void* (*Shared_Library_Loader_Function)(void*);
 
 #ifdef WINDOWS
 #define WIN32_LEAN_AND_MEAN
@@ -15,7 +15,7 @@ public:
     }
     void *call_function(std::string function_name, void *arg)
     {
-        MyFunctionType MyFunction = reinterpret_cast<MyFunctionType>(GetProcAddress(hDLL, function_name.c_str()));
+        Shared_Library_Loader_Function MyFunction = reinterpret_cast<Shared_Library_Loader_Function>(GetProcAddress(hDLL, function_name.c_str()));
 
 
         if (MyFunction != nullptr)
@@ -31,7 +31,7 @@ public:
 };
 #endif
 
-#ifdef LINUX
+#ifdef UNIX
 #include <dlfcn.h>
 class Shared_Library_Loader
 {
@@ -43,7 +43,7 @@ public:
     }
     void *call_function(std::string function_name, void *arg)
     {
-        MyFunctionType MyFunction = reinterpret_cast<MyFunctionType>(dlsym(handle, function_name.c_str()));
+        Shared_Library_Loader_Function MyFunction = reinterpret_cast<Shared_Library_Loader_Function>(dlsym(handle, function_name.c_str()));
 
         if (MyFunction != nullptr)
         {
